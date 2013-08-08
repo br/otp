@@ -643,7 +643,7 @@ $(OBJDIR)/beam_emu.o: beam/beam_emu.c
 endif
 
 $(OBJDIR)/%.o: beam/%.c
-	$(CC) $(subst -O2, $(GEN_OPT_FLGS), $(CFLAGS)) $(INCLUDES) -c $< -o $@
+	$(CC) $(INCLUDES) $(subst -O2, $(GEN_OPT_FLGS), $(CFLAGS)) -c $< -o $@
 
 $(OBJDIR)/%.o: $(TARGET)/%.c
 	$(CC) $(CFLAGS) $(INCLUDES) -Idrivers/common -c $< -o $@
